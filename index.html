@@ -6,15 +6,26 @@
   <title>React Tutorial</title>
 </head>
 <body>
-  <div>
-    <p>React</p>
-    <p>Tutorial</p>
-    <p>React</p>
-    <p>Tutorial</p>
-    <p>Tutorial</p>
-    <p>React</p>
-    <p>Tutorial</p>
-   
-  </div>
+  <div class="js-container"> </div>
+
+  <script src="https://unpkg.com/supersimpledev/react.js"></script>
+  <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+  <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+  <script type="text/babel">
+    
+    // const div = (
+    //     <div>
+    //       <button>Click</button>
+    //       <h1>This is a pragraph</h1>
+    //     </div>
+    //  );
+
+     
+  
+  
+  const container = document.querySelector('.js-container');
+  ReactDOM.createRoot(container).render(div);
+</script>
 </body>
 </html>
