@@ -15,57 +15,53 @@
   <script type="text/babel">
     
 
-    function Chatbot() {
-    return (
-      <>
-        <input />
-        <button>Send</button>
-      </>
-    )  
-    };
-    function Chatmessage(props) {
+    function Chatbot(props) {
       const message = props.message;
       const sender = props.sender;
-
-      if(sender == "user") {
-        return (
+      if(sender === "user") {
+        return(
           <div>
+          <img src="halland.avif" width = "30" alt="" ></img>
           {message}
-          <img src="halland.avif" width = "30" alt=""></img>
         </div>
         )
       } else {
         return (
           <div>
-          <img src="halland.avif" width = "30" alt=""></img>
-          {message}
-        </div>
+            {message}
+            <img src="halland.avif" width = "30" alt="" ></img>
+          </div>
         )
-      }
-     
+      };
       return (
         <div>
+          <img src="halland.avif" width = "30" alt="" ></img>
           {message}
-          <img src="halland.avif" width = "30" alt=""></img>
         </div>
       )
-      
     }
-  
-  
 
 
+    const app = 
+     <>
+      <Chatbot 
+        message = "This is the first Box" 
+        sender = "user"
+      />
+      <Chatbot 
+        message = "This is the second Box" 
+        sender = "robot" 
+      />
+      <Chatbot 
+        message = "This is the third Box" 
+        sender = "user"
+      />
+      <Chatbot 
+        message = "This is the second Box" 
+        sender = "robot" 
+      />
 
-    const app = (
-      <>
-      <Chatbot />
-      <Chatmessage message = "Hello Chatbot" sender = "user"/>
-      <Chatmessage message = "Hello, how can i help you?" sender = "robot"/>
-      <Chatmessage message = "what is today date?" sender = "user"/>
       </>
-
-    );
-
   const container = document.querySelector('.js-container');
   ReactDOM.createRoot(container).render(app);
 </script>
