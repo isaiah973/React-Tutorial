@@ -19,14 +19,14 @@
     
 
     function ToDoList () {
-      const [array, setArray] = React.useState(["Eat Breakfast", "Go to Church"]);
+      const [array, setArray] = React.useState([]);
       const [input, setInputText] = React.useState(" ");
 
         function HandleInput(event) {
           setInputText(event.target.value);
       }
       function addToDo () {
-
+        setArray([...array, input,]);
       }
 
       return(
@@ -37,8 +37,8 @@
             <button className="add-btn" onClick = {addToDo}>Add</button>
           </div>
           <ol className="list-container">
-          {array.map((value, index) =>
-              <li className = "list">
+            {array.map((value, index) =>
+              <li key = {index} className = "list">
                 <p>{value}</p>
                 <button>Up</button>
                 <button>Down</button>
