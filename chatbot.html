@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>React Tutorial/Chatbot</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <div class="js-container"> </div>
@@ -15,55 +18,46 @@
   <script type="text/babel">
     
 
-    function Chatbot(props) {
-      const message = props.message;
-      const sender = props.sender;
-      if(sender === "user") {
-        return(
-          <div>
-          <img src="halland.avif" width = "30" alt="" ></img>
-          {message}
-        </div>
-        )
-      } else {
-        return (
-          <div>
-            {message}
-            <img src="halland.avif" width = "30" alt="" ></img>
+    function ToDoList () {
+      const [array, setArray] = React.useState(["Eat Breakfast", "Go to Church"]);
+      const [input, setInputText] = React.useState(" ");
+
+        function HandleInput(event) {
+          setInputText(event.target.value);
+      }
+      function addToDo () {
+
+      }
+
+      return(
+        <>
+        <div className="toDoList-container">
+          <div className ="input-btn-container">
+            <input placeholder = "Enter Todo" className="input-box" onChange = {HandleInput} type="text"></input>
+            <button className="add-btn" onClick = {addToDo}>Add</button>
           </div>
-        )
-      };
-      return (
-        <div>
-          <img src="halland.avif" width = "30" alt="" ></img>
-          {message}
+          <ol className="list-container">
+          {array.map((value, index) =>
+              <li className = "list">
+                <p>{value}</p>
+                <button>Up</button>
+                <button>Down</button>
+                <button>Delete</button>
+              </li>
+            )}
+          </ol>
         </div>
+        </>
       )
     }
 
-
-    const app = 
-     <>
-      <Chatbot 
-        message = "This is the first Box" 
-        sender = "user"
-      />
-      <Chatbot 
-        message = "This is the second Box" 
-        sender = "robot" 
-      />
-      <Chatbot 
-        message = "This is the third Box" 
-        sender = "user"
-      />
-      <Chatbot 
-        message = "This is the second Box" 
-        sender = "robot" 
-      />
-
-      </>
+    function App() {
+      return (
+        <ToDoList />
+      )
+    }
   const container = document.querySelector('.js-container');
-  ReactDOM.createRoot(container).render(app);
+  ReactDOM.createRoot(container).render(<App />);
 </script>
 </body>
 </html>

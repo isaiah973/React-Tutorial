@@ -1,0 +1,84 @@
+:root {
+  --primary: #48cfcb;
+  --secondary: #229799;
+  --dark: #424242;
+  --gray: #F5F5F5;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.toDoList-container {
+  width: 1000px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.input-btn-container {
+  display: flex;
+  width: 80%;
+}
+
+.input-box {
+  height: 40px;
+  flex: 3;
+  border: 0.1rem solid #48cfcb;
+  outline: none;
+  color: var(--dark);
+  font-size: 1.2rem;
+  padding: 0px 5px;
+}
+.input-box::placeholder {
+  font-size: 1rem;
+}
+.add-btn {
+  padding: 0.4rem;
+  flex: 1;
+  border: 0px;
+  background: var(--secondary);
+  margin-left: -4px;
+  color: var(--gray);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
+  transition: all 0.3s ease-in-out;
+}
+.add-btn:hover {
+  background-color: var(--primary);
+}
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.list {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  flex: 3;
+  background: var(--gray);
+  list-style: none;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+.list button {
+  flex: 1;
+  padding: 0.4rem;
+  border: 0;
+  background: var(--dark);
+  margin-left: -4px;
+  color: var(--gray);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin-right: 0.4rem;
+}
+.list p {
+  flex: 10;
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  color: var(--dark);
+}
